@@ -1,0 +1,24 @@
+body {
+	padding: 0;
+	margin: 0;
+	text-align:center;
+}
+
+header {
+	background: #ebebe0;
+	font-size: 18px;
+	font-family: Arial;
+}
+
+p {	
+	text-align: right;
+}
+
+#nama {
+	font-size: 50px;
+	margin: 30px;
+}
+
+#peng {
+	padding: 0px;
+}
