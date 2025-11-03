@@ -1,39 +1,243 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-	<title>Data Diri</title>
-	<link rel="shortcut icon" href="http://kubs.greget-ti.com/assets/images/man1.png">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nur Iman — Portfolio</title>
+  <meta name="description" content="Portofolio Nur Iman — Software Developer | Fullstack" />
+
+  <!-- Basic styling (responsive, modern-ish) -->
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1320;
+      --muted:#9aa4b2;
+      --accent:#4f46e5;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #071025 0%, #081025 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .container{
+      max-width:1000px;
+      margin:40px auto;
+      padding:24px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .avatar{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:white;
+      box-shadow:0 6px 20px rgba(79,70,229,0.15);
+    }
+    h1{margin:0;font-size:20px}
+    .subtitle{color:var(--muted);font-size:13px;margin-top:4px}
+
+    nav a{
+      color:var(--muted);text-decoration:none;margin-left:14px;font-size:14px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:20px;
+      align-items:start;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+    }
+
+    .intro h2{margin:0 0 8px 0}
+    .bttn{
+      display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;
+      background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;
+      box-shadow: 0 8px 18px rgba(79,70,229,0.18);
+    }
+
+    .contact-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+    .small{font-size:13px;color:var(--muted)}
+    .projects{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    .project{
+      background:var(--glass);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)
+    }
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .skill{padding:6px 8px;background:rgba(255,255,255,0.03);border-radius:8px;font-size:13px;color:var(--muted)}
+
+    footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .avatar{width:56px;height:56px}
+    }
+  </style>
 </head>
 <body>
-	<div align="center">
-		<div class="card" style="width: 25rem;">
-		  <img src="http://www.partfaliaz.com/wp-content/uploads/2015/01/goran-factory-F-1050x700.jpg" class="card-img-top" alt="...">
-		</div>
-		<div class="card-body">
-		    <h5 class="card-title">Nur Iman</h5>
-		    <a href="https://www.instagram.com/ehkubbil/" target="_blank"><i class="fab fa-instagram" style="font-size: 48px"></i></a>
-		    &nbsp;
-		    <a href="https://github.com/imankubbil" target="_blank"><i class="fab fa-github" style="font-size: 48px"></i></a>
-		    <p class="card-text">Seorang laki-laki yang haus akan hal baru yang tidak saya tau.</p>
-		    <p class="card-text">Tinggal dibekasi tepatnya di perbatasan kota bekasi yaitu kebupaten bekasi(Babelan).</p>
-		    <ul class="list-group">
-		    	<div class="row">
-		    		<div class="col-sm-4">
-			  			<li class="list-group-item">Tempat, Tanggal Lahir : Jakarta, 13-12-1994</li>
-		    		</div>
-		    		<div class="col-sm-4">
-			  			<li class="list-group-item">No Hp : 0895356527748</li>
-		    		</div>
-		    		<div class="col-sm-4">
-			  			<li class="list-group-item">Email : imankubbil@gmail.com</li>
-		    		</div>
-		    		<div class="col-sm-12">
-		    			<li class="list-group-item">Alamat : Vila Mutiara Gading 3 Blok N15 Nomer 7 Kebalen Babelan Bekasi.</li>
-		    		</div>
-		    	</div>
-			</ul>
-		</div>
-	</div>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar" aria-hidden="true">NI</div>
+        <div>
+          <h1>Nur Iman</h1>
+          <div class="subtitle">Software / Fullstack Developer</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="card intro">
+        <h2>Halo — saya Nur Iman</h2>
+        <p class="small">
+          Saya memiliki pengalaman dalam pengembangan perangkat lunak berbasis web dan menikmati tantangan di setiap tahap prosesnya,
+          mulai dari pembuatan sketsa, perancangan, hingga analisis desain basis data serta alur program. Fokus pada peningkatan kinerja perangkat lunak, pengelolaan & pengambilan data dari database.
+        </p>
+
+        <div style="margin-top:12px">
+          <a class="bttn" href="#contact">Hubungi Saya</a>
+          <a class="bttn" style="background:transparent;color:var(--accent);margin-left:8px;border:1px solid rgba(255,255,255,0.04)" href="CV-2025.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+
+        <h3 style="margin-top:18px">Skills</h3>
+        <div class="skills" aria-hidden="false">
+          <div class="skill">JavaScript (Node, React, Angular)</div>
+          <div class="skill">PHP (CodeIgniter)</div>
+          <div class="skill">Databases (MySQL, PostgreSQL)</div>
+          <div class="skill">APIs / Integrations</div>
+          <div class="skill">Server & Deployment</div>
+        </div>
+
+        <h3 style="margin-top:16px">Ringkasan Project</h3>
+        <div class="projects">
+          <div class="project">
+            <strong>Sistem Manajemen Laboratorium & Pengujian (ANTAM)</strong>
+            <div class="small">Dashboard: Angular • API: NodeJS/SailsJS • Deploy & Bugfix</div>
+          </div>
+          <div class="project">
+            <strong>Sistem Monitoring Data Center (PLN, KAI)</strong>
+            <div class="small">Dashboard: Angular • API: NodeJS/Express • Integrasi Data Center</div>
+          </div>
+          <div class="project">
+            <strong>Portal Bank Garansi & Britrade</strong>
+            <div class="small">PHP (CodeIgniter 4) • Reengineering & CI/CD (Bamboo)</div>
+          </div>
+          <div class="project">
+            <strong>Company profile & Dashboard (kitong.id)</strong>
+            <div class="small">ReactJS / AngularJS • API • Server Setup</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card" style="height:fit-content">
+        <h3 style="margin-top:0">Kontak</h3>
+        <div class="contact-list" id="contact">
+          <div><strong>Email:</strong> <a href="mailto:imankubbil@gmail.com">imankubbil@gmail.com</a></div>
+          <div><strong>Telp:</strong> (0895) 3565 2774 8</div>
+          <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nur-iman" target="_blank" rel="noopener">/in/nur-iman</a></div>
+          <div><strong>GitHub:</strong> <a href="https://github.com/imankubbil" target="_blank" rel="noopener">github.com/imankubbil</a></div>
+          <div><strong>Lokasi:</strong> Jakarta, Indonesia</div>
+        </div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+        <h4 style="margin:8px 0">Experience (singkat)</h4>
+        <div class="small">
+          <ul style="padding-left:18px;margin:6px 0">
+            <li>PT Arcentric — Design System (Des 2022 - Sekarang)</li>
+            <li>PT Bank Rakyat Indonesia (Outsourcing) — Fullstack (Sep 2021 - Agu 2022)</li>
+            <li>PT Bakrie Pipe Industries — Fullstack (Okt 2020 - Agu 2021)</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <section id="projects" class="card" style="margin-top:16px">
+      <h3 style="margin-top:0">Project detail</h3>
+      <p class="small">
+        Detail project dapat ditambahkan di sini — sertakan link repo, screenshot, atau demo. Contoh struktur yang disarankan: judul proyek, peran (frontend/backend), tech stack, link demo / repo, ringkasan kontribusi.
+      </p>
+
+      <!-- Contoh entries -->
+      <div style="display:grid;gap:12px;margin-top:12px">
+        <div style="background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+          <strong>Gelis - Genius Lab Intelligence System</strong>
+          <div class="small">Web Application — Sistem Manajemen Laboratorium & Pengujian. Dashboard (Angular), API (NodeJS/SailsJS).</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.02);padding:12px;border-radius:10px">
+          <strong>Portal Bank Garansi & Britrade</strong>
+          <div class="small">PHP, CodeIgniter 4 — reengineering & automation build/deploy</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="card" style="margin-top:16px">
+      <h3 style="margin-top:0">Timeline pengalaman</h3>
+      <ol class="small" style="padding-left:18px">
+        <li>2018–2020: PT Anak Pintar Studio — Dashboard & Integrasi (Angular / Node)</li>
+        <li>2020–2021: PT Bakrie Pipe Industries — Fullstack (CodeIgniter, monitoring hosting)</li>
+        <li>2021–2022: PT BRI (Outsourcing) — Fullstack (React, Angular, Node)</li>
+        <li>2022–Sekarang: PT Arcentric — Design System</li>
+      </ol>
+    </section>
+
+    <footer>
+      Dibuat dengan template sederhana • Konten diambil dari CV yang diunggah. :contentReference[oaicite:1]{index=1}
+    </footer>
+  </div>
+
+  <!-- Small JS: smooth scroll + copy email -->
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        if(!id) return window.scrollTo({top:0,behavior:'smooth'});
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+
+    // Optional: quick copy email when double-click contact card
+    const contact = document.querySelector('.contact-list');
+    if(contact){
+      contact.addEventListener('dblclick', () => {
+        const email = 'imankubbil@gmail.com';
+        if(navigator.clipboard) navigator.clipboard.writeText(email);
+        alert('Email disalin: ' + email);
+      });
+    }
+  </script>
+</body>
 </html>
